@@ -1,0 +1,38 @@
+def matched(n):
+    n=list(n)
+    c=0
+    for i in range(len(n)):
+        if c==-1:
+            return False
+        if n[i]=="(":
+            c=c+1
+        if n[i]==")":
+            c=c-1
+    if c==0:
+        return True
+    else:
+        return False
+      
+      
+def isprime(n):
+    if(n<=1):
+        return False;
+    for i in range(2,int(n**0.5)+1):
+        if(n%i==0):
+            return False;
+    return True;
+      
+def rotatelist(l,k):
+    
+    k=k%(len(l))
+    return l[k:]+l[:k]
+  
+def primepartition(n):
+    #alternative version
+    if(n<=3):
+        return False;
+    for i in range(1,n):
+        if(isprime(i) and isprime(n-i)):
+            return True;
+    return False;
+        
